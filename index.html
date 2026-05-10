@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Md Asad Alam | AI & CV Developer</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  
+</head>
+
+<body>
+
+  <div id="cur"></div>
+  <div id="cur-ring"></div>
+  <canvas id="bg-canvas"></canvas>
+  <div class="noise"></div>
+
+  <!-- ════ LEFT SIDE NAV — pill style like Image 2 ════ -->
+  <nav class="side-nav" id="sidenav">
+    <a href="#hero" class="nav-item active" data-sec="hero">
+      <i class="ti ti-home-2"></i>
+      <div class="ntip">Home</div>
+    </a>
+    <a href="#about" class="nav-item" data-sec="about">
+      <i class="ti ti-user"></i>
+      <div class="ntip">About</div>
+    </a>
+    <a href="#skills" class="nav-item" data-sec="skills">
+      <i class="ti ti-code"></i>
+      <div class="ntip">Skills</div>
+    </a>
+    <a href="#projects" class="nav-item" data-sec="projects">
+      <i class="ti ti-layout-grid"></i>
+      <div class="ntip">Projects</div>
+    </a>
+    <a href="#contact" class="nav-item" data-sec="contact">
+      <i class="ti ti-mail"></i>
+      <div class="ntip">Contact</div>
+    </a>
+    <div class="nav-div"></div>
+    <!-- Bottom socials inside pill -->
+    <a href="mailto:asadalam842@gmail.com" class="nav-soc">
+      <i class="ti ti-mail"></i>
+    </a>
+    <a href="https://github.com/mdAsadAlamgithub" target="_blank" class="nav-soc">
+      <i class="ti ti-brand-github"></i>
+    </a>
+    <a href="https://linkedin.com/" target="_blank" class="nav-soc">
+      <i class="ti ti-brand-linkedin"></i>
+    </a>
+  </nav>
+
+  <!-- ════ RIGHT SIDE — FLOATING SKILL ICON GRID (Image 1 style) ════ -->
+  <div id="skill-scene">
+    <!-- Concentric circle rings SVG (the subtle rings from Image 1) -->
+    <svg class="rings" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="250" cy="250" r="80" stroke="#3ddc6e" stroke-width=".6" />
+      <circle cx="250" cy="250" r="150" stroke="#3ddc6e" stroke-width=".5" />
+      <circle cx="250" cy="250" r="220" stroke="#3ddc6e" stroke-width=".4" />
+      <circle cx="250" cy="250" r="290" stroke="#3ddc6e" stroke-width=".3" />
+      <!-- crosshair lines -->
+      <line x1="250" y1="0" x2="250" y2="500" stroke="#3ddc6e" stroke-width=".3" />
+      <line x1="0" y1="250" x2="500" y2="250" stroke="#3ddc6e" stroke-width=".3" />
+    </svg>
+
+    <!-- PYTHON -->
+    <div class="sk-ic" id="sk0">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M12 2c-2.3 0-4 .9-4 2v2h4v1H6C4.3 7 3 8.3 3 10.3v3.4C3 15.7 4.3 17 6 17h1v-3c0-1.7 1.3-3 3-3h4c1.7 0 3-1.3 3-3V4c0-1.1-1.7-2-5-2zm-1 2.5c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1z"
+          fill="#3776AB" />
+        <path
+          d="M12 22c2.3 0 4-.9 4-2v-2h-4v-1h6c1.7 0 3-1.3 3-3.3v-3.4C21 8.3 19.7 7 18 7h-1v3c0 1.7-1.3 3-3 3H10c-1.7 0-3 1.3-3 3v3c0 1.1 1.7 2 5 2zm1-2.5c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"
+          fill="#FFD43B" />
+      </svg>
+      <span class="ic-label">Python</span>
+      <div class="ic-tip">Python</div>
+    </div>
+
+    <!-- OPENCV -->
+    <div class="sk-ic" id="sk1">
+      <svg viewBox="0 0 24 24" fill="none">
+        <circle cx="8" cy="12" r="5" fill="#3ddc6e" opacity=".8" />
+        <circle cx="16" cy="12" r="5" fill="#3ddc6e" opacity=".5" />
+        <circle cx="12" cy="7" r="5" fill="#3ddc6e" opacity=".35" />
+      </svg>
+      <span class="ic-label">OpenCV</span>
+      <div class="ic-tip">OpenCV</div>
+    </div>
+
+    <!-- Machine Learning -->
+    <div class="sk-ic" id="sk2">
+      <i class="ti ti-brain"></i>
+      <span class="ic-label">ML</span>
+      <div class="ic-tip">Machine Learning</div>
+    </div>
+
+    <!-- NUMPY -->
+    <div class="sk-ic" id="sk3">
+      <svg viewBox="0 0 24 24" fill="none">
+        <rect x="3" y="3" width="8" height="8" rx="1.5" fill="#4DABCF" />
+        <rect x="13" y="3" width="8" height="8" rx="1.5" fill="#4DABCF" opacity=".6" />
+        <rect x="3" y="13" width="8" height="8" rx="1.5" fill="#4DABCF" opacity=".6" />
+        <rect x="13" y="13" width="8" height="8" rx="1.5" fill="#4DABCF" opacity=".4" />
+      </svg>
+      <span class="ic-label">NumPy</span>
+      <div class="ic-tip">NumPy</div>
+    </div>
+
+    <!-- DEEP LEARNING -->
+    <div class="sk-ic" id="sk4">
+      <svg viewBox="0 0 24 24" fill="none">
+        <circle cx="5" cy="7" r="2" fill="#FF6F00" />
+        <circle cx="5" cy="17" r="2" fill="#FF6F00" />
+        <circle cx="12" cy="5" r="2" fill="#FF8F00" />
+        <circle cx="12" cy="12" r="2" fill="#FF8F00" />
+        <circle cx="12" cy="19" r="2" fill="#FF8F00" />
+        <circle cx="19" cy="9" r="2" fill="#FFA000" />
+        <circle cx="19" cy="15" r="2" fill="#FFA000" />
+        <line x1="7" y1="7" x2="10" y2="6" stroke="#FF6F00" stroke-width="1.2" />
+        <line x1="7" y1="7" x2="10" y2="12" stroke="#FF6F00" stroke-width="1.2" />
+        <line x1="7" y1="17" x2="10" y2="12" stroke="#FF6F00" stroke-width="1.2" />
+        <line x1="7" y1="17" x2="10" y2="19" stroke="#FF6F00" stroke-width="1.2" />
+        <line x1="14" y1="6" x2="17" y2="9" stroke="#FF8F00" stroke-width="1.2" />
+        <line x1="14" y1="12" x2="17" y2="9" stroke="#FF8F00" stroke-width="1.2" />
+        <line x1="14" y1="12" x2="17" y2="15" stroke="#FF8F00" stroke-width="1.2" />
+        <line x1="14" y1="19" x2="17" y2="15" stroke="#FF8F00" stroke-width="1.2" />
+      </svg>
+      <span class="ic-label">Deep L.</span>
+      <div class="ic-tip">Deep Learning</div>
+    </div>
+
+    <!-- HTML5 -->
+    <div class="sk-ic" id="sk5">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M3 2l1.5 17L12 21l7.5-2L21 2H3z" fill="#E34F26" />
+        <path d="M12 19.5l6.1-1.7L19.4 5H12v14.5z" fill="#EF652A" />
+        <path d="M12 10H8.5l-.2-2.5H12V5H5.8l.6 7H12v-2zm0 4.5l-3.1-.8-.2-2.2H6.2l.4 4.5 5.4 1.5v-3z" fill="#fff" />
+        <path d="M12 10v2h3.3l-.3 3.7-3 .8v3l5.4-1.5.4-4.5H12v-3.5h3.6l.2-2.5H12V5h6.2l-.6 7H12v-2z" fill="#EBEBEB" />
+      </svg>
+      <span class="ic-label">HTML5</span>
+      <div class="ic-tip">HTML5</div>
+    </div>
+
+    <!-- CSS3 -->
+    <div class="sk-ic" id="sk6">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M3 2l1.5 17L12 21l7.5-2L21 2H3z" fill="#1572B6" />
+        <path d="M12 19.5l6.1-1.7L19.4 5H12v14.5z" fill="#33A9DC" />
+        <path
+          d="M12 10H8.3l.2 2h3.5v2H8.1l.3 2.8 3.6 1v2.2L6.6 18.5 6 12H5l-.6-7H12V10zm0 0h3.7l-.2 2H12v-2zm-.1 4h3.2l-.3 2.8-2.9.8v-3.6z"
+          fill="#fff" />
+      </svg>
+      <span class="ic-label">CSS3</span>
+      <div class="ic-tip">CSS3</div>
+    </div>
+
+    <!-- JavaScript -->
+    <div class="sk-ic" id="sk7">
+      <svg viewBox="0 0 24 24" fill="none">
+        <rect x="3" y="3" width="18" height="18" rx="2" fill="#F7DF1E" />
+        <path
+          d="M15 16.5c0 1.4.8 2 1.9 2 1 0 1.7-.5 1.7-1.4 0-1-.6-1.4-1.7-1.9l-.6-.2c-1.7-.7-2.8-1.6-2.8-3.4 0-1.7 1.3-3 3.3-3 1.4 0 2.4.5 3.1 1.8l-1.7 1.1c-.4-.7-.8-1-1.5-1-.7 0-1.1.4-1.1 1 0 .7.4 1 1.4 1.4l.6.3c2 .8 3.1 1.7 3.1 3.6 0 2-1.6 3.2-3.7 3.2-2.1 0-3.4-1-4-2.4l1.8-1.1zm-8.5.2c.3.6.6.9 1.2.9.6 0 1-.2 1-1.2V10h2v6.5c0 2-1.2 2.9-2.9 2.9-1.6 0-2.5-.8-2.9-1.8l1.6-1z"
+          fill="#323330" />
+      </svg>
+      <span class="ic-label">JS</span>
+      <div class="ic-tip">JavaScript</div>
+    </div>
+
+    <!-- JAVA -->
+    <div class="sk-ic" id="sk8">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M8.85 17.1s-.9.5.65.67c1.88.22 2.84.19 4.91-.21 0 0 .54.34 1.3.63-4.63 1.98-10.48-.11-6.86-1.09z"
+          fill="#EA2D2E" />
+        <path d="M8.27 14.75s-1.02.75.54.91c2.01.21 3.6.22 6.35-.3 0 0 .38.38.96.59-5.63 1.65-11.9.13-7.85-1.2z"
+          fill="#EA2D2E" />
+        <path
+          d="M13.45 10.56c1.14 1.32-.3 2.5-.3 2.5s2.9-1.5 1.57-3.37c-1.24-1.75-2.2-2.62 2.97-5.62 0 0-8.12 2.03-4.24 6.49z"
+          fill="#EA2D2E" />
+        <path
+          d="M19.2 18.85s.67.55-.73.97c-2.66.8-11.07 1.05-13.41.03-.84-.37.73-.87 1.22-.98.51-.11.8-.09.8-.09C5.41 17.9 1.6 19.34 4.3 19.84c7.47 1.38 13.62-.63 14.9-1z"
+          fill="#EA2D2E" />
+        <path
+          d="M9.47 12.36s-4.19 1-1.48 1.36c1.14.15 3.41.12 5.53-.07 1.73-.15 3.47-.48 3.47-.48s-.61.26-1.05.56c-4.23 1.11-12.4.59-10.05-.54 1.98-1 3.58-.83 3.58-.83z"
+          fill="#EA2D2E" />
+        <path
+          d="M17.02 15.76c4.3-2.23 2.31-4.37 0.92-4.08-.34.07-.49.13-.49.13s.13-.2.37-.28c2.76-.97 4.89 2.86-.89 4.38 0 0 .07-.06.09-.15z"
+          fill="#EA2D2E" />
+        <path
+          d="M14.2 2s2.39 2.39-2.27 6.06c-3.73 2.95-.85 4.63 0 6.55-2.18-1.97-3.78-3.7-2.71-5.31C10.86 7.09 15.16 6 14.2 2z"
+          fill="#EA2D2E" />
+      </svg>
+      <span class="ic-label">Java</span>
+      <div class="ic-tip">Java</div>
+    </div>
+
+    <!-- GIT -->
+    <div class="sk-ic" id="sk9">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M22.17 11.05L12.95 1.83a1.4 1.4 0 00-1.98 0l-1.97 1.97 2.5 2.5c.58-.2 1.25-.07 1.71.4a1.4 1.4 0 01.38 1.74l2.4 2.4c.58-.2 1.25-.07 1.72.39a1.4 1.4 0 010 1.98 1.4 1.4 0 01-1.98 0c-.48-.49-.61-1.18-.37-1.78l-2.23-2.23v5.87c.58.28.99.88.99 1.57a1.4 1.4 0 01-2.8 0c0-.77.5-1.43 1.2-1.66V8.7a1.4 1.4 0 01-.76-1.84L9.26 4.4 1.83 11.83a1.4 1.4 0 000 1.98l9.22 9.22a1.4 1.4 0 001.97 0l9.15-9.15a1.4 1.4 0 000-1.83z"
+          fill="#F05032" />
+      </svg>
+      <span class="ic-label">Git</span>
+      <div class="ic-tip">Git</div>
+    </div>
+
+    <!-- C Language -->
+    <div class="sk-ic" id="sk10">
+      <svg viewBox="0 0 24 24" fill="none"><text x="4" y="17" font-family="Arial" font-weight="800" font-size="14"
+          fill="#659AD2">C</text>
+        <circle cx="12" cy="12" r="9" stroke="#659AD2" stroke-width="1.5" fill="none" />
+      </svg>
+      <span class="ic-label">C Lang</span>
+      <div class="ic-tip">C Language</div>
+    </div>
+
+    <!-- VS Code -->
+    <div class="sk-ic" id="sk11">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M17 1.5L6 13.2 2 9.5 0 10.5l4 4.5-4 4.5 2 1 4-3.7L17 28.5l4-2v-23l-4-2zm2 21L7.5 14.5 19 6v16.5z"
+          fill="#007ACC" transform="scale(.72) translate(2,2)" />
+      </svg>
+      <span class="ic-label">VS Code</span>
+      <div class="ic-tip">VS Code</div>
+    </div>
+  </div>
+
+  <!-- ════════════ MAIN CONTENT ════════════ -->
+  <main>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-content">
+        <div class="hero-name" id="hname">
+          <span class="n1">Md Asad</span>
+          <span class="n2">Alam</span>
+        </div>
+        <p class="hero-role">AI &amp; web <span>Developer</span></p>
+        <p class="hero-sub">Turning ideas into intelligent systems — building with Python, Machine Learning, and
+          Computer Vision at Techno Main Salt Lake, Kolkata.</p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn-p"><i class="ti ti-layout-grid"></i>View My Work</a>
+          <a href="#contact" class="btn-s">Get In Touch</a>
+        </div>
+        <!-- Bottom socials — exact like Image 2: GitHub, LinkedIn, Email -->
+        <div class="hero-socials" id="hsocials">
+          <!-- GitHub SVG -->
+          <a href="https://github.com/mdAsadAlamgithub" target="_blank" class="hsoc" title="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.46-1.11-1.46-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85 0 1.71.11 2.5.34 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z" />
+            </svg>
+            <span class="ht">GitHub</span>
+          </a>
+          <!-- LinkedIn SVG -->
+          <a href="https://linkedin.com/" target="_blank" class="hsoc" title="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+            <span class="ht">LinkedIn</span>
+          </a>
+          <!-- Email SVG -->
+          <a href="mailto:asadalam842@gmail.com" class="hsoc" title="Email">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+            <span class="ht">Email</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="sw">
+        <div class="reveal">
+          <div class="stag">Who I am</div>
+          <h2 class="stitle">About <span>Me</span></h2>
+        </div>
+        <div class="about-grid">
+          <div class="reveal rd1">
+            <div class="acard">
+              <div class="acard-top">
+                <div class="avwrap">
+                  <div class="av-ring">
+                    <div class="av-dot"></div>
+                  </div>
+                  <div class="av-photo">
+                    <div class="av-ini">MA</div>
+                  </div>
+                </div>
+                <h3>Md Asad Alam</h3>
+                <p class="acard-subtitle">CS Student &amp; AI Developer</p>
+              </div>
+              <div class="arows">
+                <div class="arow">
+                  <div class="ai"><i class="ti ti-school"></i></div>
+                  <div class="ainfo">
+                    <div class="lab">Institution</div>
+                    <div class="val">Techno Main Salt Lake</div>
+                  </div>
+                </div>
+                <div class="arow">
+                  <div class="ai"><i class="ti ti-certificate"></i></div>
+                  <div class="ainfo">
+                    <div class="lab">Programme</div>
+                    <div class="val">Diploma in CST (WBSCTE)</div>
+                  </div>
+                </div>
+                <div class="arow">
+                  <div class="ai"><i class="ti ti-calendar"></i></div>
+                  <div class="ainfo">
+                    <div class="lab">Status</div>
+                    <div class="val">6th Semester — 2023–Present</div>
+                  </div>
+                </div>
+                <div class="arow">
+                  <div class="ai"><i class="ti ti-map-pin"></i></div>
+                  <div class="ainfo">
+                    <div class="lab">Location</div>
+                    <div class="val">Kolkata, West Bengal, India</div>
+                  </div>
+                </div>
+                <div class="arow">
+                  <div class="ai"><i class="ti ti-mail"></i></div>
+                  <div class="ainfo">
+                    <div class="lab">Email</div>
+                    <div class="val">asadalam842@gmail.com</div>
+                  </div>
+                </div>
+                <div class="arow">
+                  <div class="ai"><i class="ti ti-phone"></i></div>
+                  <div class="ainfo">
+                    <div class="lab">Phone</div>
+                    <div class="val">+91 84205 58743</div>
+                  </div>
+                </div>
+                <div class="arow">
+                  <div class="ai"><i class="ti ti-language"></i></div>
+                  <div class="ainfo">
+                    <div class="lab">Languages</div>
+                    <div class="val">English, Hindi</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reveal rd2">
+            <h3 class="about-right-title">Enthusiastic Builder &amp; Learner</h3>
+            <p class="adesc">I'm an enthusiastic Diploma student in Computer Science &amp; Technology with a strong
+              interest in Python, Machine Learning, and Computer Vision. I enjoy building AI-powered systems that tackle
+              real problems.</p>
+            <p class="adesc">My analytical thinking and fast-learning ability allow me to quickly pick up new
+              technologies. I'm seeking a campus placement to apply my skills in software development and AI-based
+              systems while gaining industry experience.</p>
+            <div class="education-label">Education</div>
+            <div class="edu-list">
+              <div class="edu-item">
+                <div class="eico"><i class="ti ti-school"></i></div>
+                <div class="einfo">
+                  <div class="deg">Diploma in Computer Science &amp; Technology</div>
+                  <div class="inst">Techno Main Salt Lake — WBSCTE</div>
+                  <div class="yr">2023 – Present &nbsp;|&nbsp; 6th Semester</div>
+                </div>
+              </div>
+              <div class="edu-item">
+                <div class="eico"><i class="ti ti-book"></i></div>
+                <div class="einfo">
+                  <div class="deg">Secondary Education (10th) — CICSE</div>
+                  <div class="inst">Guru Nanak Modern English School</div>
+                  <div class="yr">Passed 2023</div>
+                </div>
+              </div>
+            </div>
+            <div class="badges">
+              <span class="badge">Problem Solver</span>
+              <span class="badge">Fast Learner</span>
+              <span class="badge">Team Player</span>
+              <span class="badge">Analytical Thinker</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS & EXPERTISE -->
+    <section id="skills">
+      <div class="sw">
+        <div class="reveal">
+          <div class="stag">What I know</div>
+          <h2 class="stitle">Skills &amp; <span>Expertise</span></h2>
+        </div>
+        <div class="skills-cols">
+          <div class="reveal rd1">
+            <div class="col-label">Proficiency Levels</div>
+            <div class="sbars">
+              <div class="sbar-item">
+                <div class="sb-head"><span>Python</span><span class="sb-pct">85%</span></div>
+                <div class="sb-track">
+                  <div class="sb-fill" data-w="85"></div>
+                </div>
+              </div>
+              <div class="sbar-item">
+                <div class="sb-head"><span>Computer Vision (OpenCV)</span><span class="sb-pct">80%</span></div>
+                <div class="sb-track">
+                  <div class="sb-fill" data-w="80"></div>
+                </div>
+              </div>
+              <div class="sbar-item">
+                <div class="sb-head"><span>Machine Learning &amp; Deep Learning</span><span class="sb-pct">72%</span>
+                </div>
+                <div class="sb-track">
+                  <div class="sb-fill" data-w="72"></div>
+                </div>
+              </div>
+              <div class="sbar-item">
+                <div class="sb-head"><span>HTML / CSS / JavaScript</span><span class="sb-pct">70%</span></div>
+                <div class="sb-track">
+                  <div class="sb-fill" data-w="70"></div>
+                </div>
+              </div>
+              <div class="sbar-item">
+                <div class="sb-head"><span>NumPy &amp; Data Handling</span><span class="sb-pct">68%</span></div>
+                <div class="sb-track">
+                  <div class="sb-fill" data-w="68"></div>
+                </div>
+              </div>
+              <div class="sbar-item">
+                <div class="sb-head"><span>Java</span><span class="sb-pct">60%</span></div>
+                <div class="sb-track">
+                  <div class="sb-fill" data-w="60"></div>
+                </div>
+              </div>
+              <div class="sbar-item">
+                <div class="sb-head"><span>Git &amp; Version Control</span><span class="sb-pct">55%</span></div>
+                <div class="sb-track">
+                  <div class="sb-fill" data-w="55"></div>
+                </div>
+              </div>
+              <div class="sbar-item">
+                <div class="sb-head"><span>C (Basic)</span><span class="sb-pct">50%</span></div>
+                <div class="sb-track">
+                  <div class="sb-fill" data-w="50"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reveal rd2">
+            <div class="col-label">Core Areas</div>
+            <div class="exp-grid">
+              <div class="exp-card">
+                <div class="exp-ico"><i class="ti ti-brain"></i></div>
+                <h4>Machine Learning</h4>
+                <p>Building models for classification, detection, and prediction using Python and deep learning.</p>
+              </div>
+              <div class="exp-card">
+                <div class="exp-ico"><i class="ti ti-eye"></i></div>
+                <h4>Computer Vision</h4>
+                <p>Real-time image processing, face recognition, and video analysis with OpenCV.</p>
+              </div>
+              <div class="exp-card">
+                <div class="exp-ico"><i class="ti ti-brand-python"></i></div>
+                <h4>Python Dev</h4>
+                <p>Scripting, automation, data handling, and AI system development.</p>
+              </div>
+              <div class="exp-card">
+                <div class="exp-ico"><i class="ti ti-world"></i></div>
+                <h4>Web Dev</h4>
+                <p>Responsive frontend pages using HTML, CSS, and JavaScript.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tech-row reveal rd3">
+          <div class="col-label">All Technologies</div>
+          <div class="tech-pills">
+            <span class="tpill">Python</span><span class="tpill">Java</span><span class="tpill">C</span>
+            <span class="tpill">HTML5</span><span class="tpill">CSS3</span><span class="tpill">JavaScript</span>
+            <span class="tpill">Machine Learning</span><span class="tpill">Deep Learning</span>
+            <span class="tpill">Computer Vision</span><span class="tpill">Image Processing</span>
+            <span class="tpill">Face Recognition</span><span class="tpill">OpenCV</span>
+            <span class="tpill">NumPy</span><span class="tpill">Data Handling</span>
+            <span class="tpill">Git</span><span class="tpill">VS Code</span>
+            <span class="tpill">Problem Solving</span><span class="tpill">Debugging</span>
+            <span class="tpill">Team Collaboration</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="sw">
+        <div class="reveal">
+          <div class="stag">What I've built</div>
+          <h2 class="stitle">Featured <span>Projects</span></h2>
+        </div>
+        <div class="proj-grid">
+          <div class="pcard full reveal rd1">
+            <div class="ph">
+              <div class="pnum">01</div>
+              <div class="pirow">
+                <div class="pico"><i class="ti ti-face-id"></i></div><span class="pbadge live">Completed</span>
+              </div>
+              <div class="ptitle">Face Recognition Security System with Email Alert</div>
+              <p class="pdesc">A smart, real-time authentication system using Python and OpenCV that verifies user
+                identity from a live camera feed and instantly sends email alerts with photos.</p>
+              <ul class="pbullets">
+                <li>Built face detection and recognition pipeline using Python and OpenCV for real-time camera
+                  operation.</li>
+                <li>System captures user image at login and matches it against a stored identity database for
+                  verification.</li>
+                <li>Automatically sends email alerts with attached photo evidence for both successful and failed login
+                  attempts.</li>
+              </ul>
+            </div>
+            <div class="pfoot">
+              <div class="ptags"><span class="ptag">Python</span><span class="ptag">OpenCV</span><span
+                  class="ptag">Computer Vision</span><span class="ptag">Email Automation</span><span class="ptag">Face
+                  Recognition</span></div>
+              <a href="#" class="plink">View Project <i class="ti ti-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="pcard reveal rd2">
+            <div class="ph">
+              <div class="pnum">02</div>
+              <div class="pirow">
+                <div class="pico"><i class="ti ti-brain"></i></div><span class="pbadge wip">In Progress</span>
+              </div>
+              <div class="ptitle">Alzheimer's Disease Detection Using MRI</div>
+              <p class="pdesc">An AI diagnostic tool that analyzes MRI brain scans using deep learning to detect early
+                signs of Alzheimer's disease and support clinical decision-making.</p>
+              <ul class="pbullets">
+                <li>Training a deep learning model for multi-class medical image classification.</li>
+                <li>Designed to support early diagnosis and assist medical professionals.</li>
+              </ul>
+            </div>
+            <div class="pfoot">
+              <div class="ptags"><span class="ptag">Python</span><span class="ptag">Deep Learning</span><span
+                  class="ptag">MRI</span><span class="ptag">Medical AI</span></div>
+              <span class="plink disabled">Under Dev <i class="ti ti-clock"></i></span>
+            </div>
+          </div>
+          <div class="pcard cta-card reveal rd3">
+            <div class="ph cta-card-content">
+              <div class="cta-icon"><i class="ti ti-plus"></i></div>
+              <div class="cta-title">More Coming Soon</div>
+              <p class="cta-copy">Currently working on new projects in AI, automation, and web development.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="sw">
+        <div class="reveal">
+          <div class="stag">Let's Connect</div>
+          <h2 class="stitle">Get In <span>Touch</span></h2>
+        </div>
+        <div class="contact-grid">
+          <div class="reveal rd1">
+            <div class="cinfo">
+              <h3>Open to Opportunities</h3>
+              <p>I'm actively looking for campus placements and internships. Whether you want to recruit, collaborate on
+                a project, or just say hello — I'd love to hear from you!</p>
+              <div class="cchannels">
+                <a href="mailto:asadalam842@gmail.com" class="cch">
+                  <div class="cico"><i class="ti ti-mail"></i></div>
+                  <div>
+                    <div class="lab">Email</div>
+                    <div class="val">asadalam842@gmail.com</div>
+                  </div>
+                </a>
+                <a href="tel:+918420558743" class="cch">
+                  <div class="cico"><i class="ti ti-phone"></i></div>
+                  <div>
+                    <div class="lab">Phone</div>
+                    <div class="val">+91 84205 58743</div>
+                  </div>
+                </a>
+                <a href="https://github.com/mdAsadAlamgithub" target="_blank" class="cch">
+                  <div class="cico"><i class="ti ti-brand-github"></i></div>
+                  <div>
+                    <div class="lab">GitHub</div>
+                    <div class="val">github.com/mdAsadAlamgithub</div>
+                  </div>
+                </a>
+                <a href="https://linkedin.com/" target="_blank" class="cch">
+                  <div class="cico"><i class="ti ti-brand-linkedin"></i></div>
+                  <div>
+                    <div class="lab">LinkedIn</div>
+                    <div class="val">linkedin.com/in/md-asad-alam</div>
+                  </div>
+                </a>
+                <div class="cch static">
+                  <div class="cico"><i class="ti ti-map-pin"></i></div>
+                  <div>
+                    <div class="lab">Address</div>
+                    <div class="val">Z-3/214 Jelia Para Road, Kolkata, India</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reveal rd2">
+            <div class="cform">
+              <h4>Send a Message</h4>
+              <div class="fgrow">
+                <div class="fg"><label>First Name</label><input type="text" placeholder="John"></div>
+                <div class="fg"><label>Last Name</label><input type="text" placeholder="Doe"></div>
+              </div>
+              <div class="fg"><label>Email Address</label><input type="email" placeholder="john@company.com"></div>
+              <div class="fg"><label>Subject</label><input type="text"
+                  placeholder="Placement Opportunity / Collaboration"></div>
+              <div class="fg"><label>Message</label><textarea rows="5"
+                  placeholder="Tell me about the opportunity..."></textarea></div>
+              <button id="sendBtn" class="subbtn"><i class="ti ti-send"></i>Send Message</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="fcopy">© 2026 Md Asad Alam &nbsp;·&nbsp; Kolkata, India</div>
+    <button id="backToTop" class="ftop"><i class="ti ti-arrow-up"></i> Back to top</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
